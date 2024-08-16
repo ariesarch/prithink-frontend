@@ -29,11 +29,14 @@ const GroupForm: FC = () => {
                 time_per_day: group?.time_per_day,
                 // user_id: group?.user_id
             });
+        } else if (AuthUser) {
+            reset({
+                user_id: AuthUser.user_id
+            })
         }
     }, [group, reset, AuthUser?.user_id, pathname])
     const onSubmit = (data:any) => {
         console.log("Form submitted:", data);
-        data.user_id = AuthUser?.user_id
         if (pathname.includes('/edit') && group) {
             updateGroup({ id: group?.group_id, data }, {
                 onSuccess: () => {

@@ -79,7 +79,7 @@ const ApiKeyForm: FC = () => {
             {globalError && <div className="text-red-500 mb-4">{globalError}</div>}
             <form onSubmit={handleSubmit(onSubmit)} className='w-full max-w-md space-y-4 '>
                 <SelectField
-                    label="field-group"
+                    label="field-site"
                     options={siteOptions}
                     {...register("site_id")}
                     error={errors.site_id?.message}
@@ -93,7 +93,7 @@ const ApiKeyForm: FC = () => {
                 />
                 <InputField
                     id="api_key"
-                    label="field-group-name"
+                    label="field-api-key"
                     type="text"
                     {...register("api_key")}
                     error={errors.api_key?.message}
