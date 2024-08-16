@@ -1,0 +1,3 @@
+.markdown {
+    @apply text-white leading-normal break-words;
+}
